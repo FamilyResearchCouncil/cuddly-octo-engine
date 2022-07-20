@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: ./
+      target: base
+      args:
+        - WWWUSER=${WWWUSER}
+        - WWWGROUP=${WWWGROUP}
+    volumes:
+      - ./.env:/var/www/html/.env
